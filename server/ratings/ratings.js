@@ -29,7 +29,7 @@ app.get("/api/epicratings", (req, res) => {
 app.get("/api/epicratings/:id", async (req, res) => {
   try {
     const results = await pool.query(
-      'SELECT * FROM "epicRatings" WHERE "productId" = $1',
+      "SELECT * FROM epicratings WHERE product_id = $1",
       [req.params.id]
     );
 
@@ -47,7 +47,7 @@ app.get("/api/ratings", (req, res) => {
 app.get("/api/ratings/:id", async (req, res) => {
   try {
     const results = await pool.query(
-      'SELECT * FROM "ratings" WHERE "productId" = $1',
+      "SELECT * FROM ratings WHERE product_id = $1",
       [req.params.id]
     );
 

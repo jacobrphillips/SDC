@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 app.get("/api/socials/:product_id", async (req, res) => {
   try {
     let result = await pool.query(
-      `SELECT * FROM socials WHERE "product_Id" = $1`,
+      `SELECT * FROM socials WHERE product_id = $1`,
       [req.params.product_id]
     );
     res.json(result.rows);

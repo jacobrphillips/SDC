@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 
 app.get("/api/achievements/:productID", (req, res) => {
   pool
-    .query('SELECT * from "achievements" WHERE "product_id" = $1', [
+    .query("SELECT * from achievements WHERE product_id = $1", [
       req.params.productID,
     ])
     .then((result) => {

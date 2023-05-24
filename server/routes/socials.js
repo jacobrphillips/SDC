@@ -12,7 +12,7 @@ Router.get("/", async (req, res) => {
   //
   console.log(process.env.DATABASE_URL);
   try {
-    let result = await pool.query('Select * FROM public."specifications_Min"');
+    let result = await pool.query("Select * FROM specs_min");
     res.json(result.rows);
   } catch (err) {
     res.status(500).json({ message: `Something went wrong: ${err}` });

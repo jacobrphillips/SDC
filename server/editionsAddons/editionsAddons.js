@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
-const port = process.env.PORT || 3001; 
+const port = process.env.PORT || 3001;
 
 const app = express();
 
@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 
 app.get("/api/editions/:productID", (req, res) => {
   pool
-    .query('SELECT * from "editions" WHERE "product_ID" = $1', [
+    .query("SELECT * from editions WHERE product_id = $1", [
       req.params.productID,
     ])
     .then((result) => {
@@ -38,9 +38,7 @@ app.get("/api/editions/:productID", (req, res) => {
 
 app.get("/api/add-ons/:productID", (req, res) => {
   pool
-    .query('SELECT * from "addOns" WHERE "product_ID" = $1', [
-      req.params.productID,
-    ])
+    .query("SELECT * from addons WHERE product_id = $1", [req.params.productID])
     .then((result) => {
       if (result.rows.length == 0) {
         res.status(404).send("No Editions Found For This Product");

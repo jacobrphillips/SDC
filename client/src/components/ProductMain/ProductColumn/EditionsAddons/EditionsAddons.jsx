@@ -35,7 +35,11 @@ function EditionsAddons({ id }) {
       <div className="flex flex-col mb-5" key={item.id}>
         <div className="flex bg-neutral-800 border-b border-neutral-700 rounded-t">
           <a href={item.pageUrl} target="_blank">
-            <img className="w-72 h-40 rounded-ss" src={item.image} alt={item.name} />
+            <img
+              className="w-72 h-40 rounded-ss"
+              src={item.image}
+              alt={item.name}
+            />
           </a>
           <div>
             <div className="flex flex-row">
@@ -65,13 +69,13 @@ function EditionsAddons({ id }) {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="2"
+              strokeWidth="2"
               stroke="currentColor"
-              class="w-6 h-6 mr-1"
+              className="w-6 h-6 mr-1"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
