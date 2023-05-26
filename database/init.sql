@@ -115,9 +115,9 @@ CREATE TABLE ratings (
 
 CREATE TABLE socials (
     id SERIAL PRIMARY KEY,
-    url text NOT NULL,
-    name text NOT NULL,
-    product_id integer NOT NULL, 
+    url text,
+    name text,
+    product_id integer, 
     FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE CASCADE
 );
 
@@ -131,7 +131,7 @@ CREATE TABLE specs_min (
     storage text NOT NULL,
     directx text NOT NULL,
     logins text,
-    product_id integer NOT NULL,
+    product_id integer,
     graphics text,
     other text,
     FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE CASCADE
@@ -139,14 +139,14 @@ CREATE TABLE specs_min (
 
 CREATE TABLE specs_rec (
     id SERIAL PRIMARY KEY,
-    os text NOT NULL,
-    processor text NOT NULL,
-    memory text NOT NULL,
-    storage text NOT NULL,
-    directx text NOT NULL,
+    os text,
+    processor text,
+    memory text,
+    storage text,
+    directx text,
     logins text,
     language_supported text,
-    product_id integer NOT NULL,
+    product_id integer,
     graphics text,
     other text,
     FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE CASCADE

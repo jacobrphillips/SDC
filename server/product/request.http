@@ -5,10 +5,10 @@ GET http://localhost:3000
 GET http://localhost:3000/api/product
 
 ### Starwars
-GET http://localhost:3000/api/product/1
+GET http://localhost:3003/api/product/1
 
 ### God of War
-GET http://localhost:3000/api/product/2
+GET http://localhost:3003/api/product/2
 
 ### Redfall
 GET http://localhost:3000/api/product/3
