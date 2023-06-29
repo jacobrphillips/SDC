@@ -4,6 +4,6 @@ import { sleep } from 'k6';
 
 export default function () {
     let id = randomIntBetween(1, 10003);
-  http.get(`http://localhost:3000/api/product/${id}`);
+  http.get(`http://104.248.120.205:3003/api/product/${id}`);
   sleep(1);
 }

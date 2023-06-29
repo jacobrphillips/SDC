@@ -1,7 +1,7 @@
 const { Pool } = require("pg");
 const faker = require("faker");
 
-const connectionString = "postgres://postgres:docker@localhost:5432/epic";
+const connectionString = "postgres://postgres:docker@database:5432/epic";
 const pool = new Pool({ connectionString: connectionString });
 
 (async () => {
@@ -401,7 +401,7 @@ const pool = new Pool({ connectionString: connectionString });
               INSERT INTO specs_rec (os, processor, memory, storage, directx, logins, language_supported, product_id, graphics, other)
               VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10 )
             `;
-        
+
             const specsRecValues = [
               specsRec.os,
               specsRec.processor,
@@ -414,11 +414,10 @@ const pool = new Pool({ connectionString: connectionString });
               specsRec.graphics,
               specsRec.other,
             ];
-        
+
             await client.query(specsRecQuery, specsRecValues);
           })
         );
-        
       })
     );
 

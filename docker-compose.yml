@@ -1,11 +1,42 @@
 version: "3"
 services:
-  pg-docker:
+  database:
     image: postgres
-    container_name: pg-docker
-    environment:
+    container_name: pg-database
+    environment: 
       - POSTGRES_PASSWORD=docker
     ports:
       - 5432:5432
     volumes:
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node-express-docker
+    expose:
+      - 3000
+      - 3001
+      - 3002
+      - 3003
+      - 3004
+      - 3005
+      - 3006
+      - 3007
+      - 3008
+      - 5173
+    ports:
+      - 3000:3000
+      - 3001:3001
+      - 3002:3002
+      - 3003:3003
+      - 3004:3004
+      - 3005:3005
+      - 3006:3006
+      - 3007:3007
+      - 3008:3008
+      - 5173:5173
+    command: npm run dev
+    depends_on:
+      - database
