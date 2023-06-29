@@ -20,6 +20,19 @@ To implement the scaled backend, I utilized various technologies including Node,
 
 Within the Postgres database, I incorporated 10,000 records of fake data generated using Faker.js. This simulated the stock of video games and their corresponding product information that would be available to customers.
 
+## Technologies Used
+
+Here are the technologies used in this project:
+
+- Node
+- Express
+- Postgres Database
+- k6
+- Faker.js
+- Docker
+- Redis
+- Digital Ocean
+
 ## Challenges and Refactoring
 
 One of the significant challenges I encountered during the implementation of the scaled backend was refactoring the project's backend to conduct load tests and utilize Digital Ocean.
