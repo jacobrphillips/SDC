@@ -20,6 +20,10 @@ The System Design Capstone project aimed to implement a scaled backend for a ful
 
 ## Introduction to the Project
 
+#### Epic Games' product page
+
+![Product Page](https://github.com/jacobrphillips/SDC/blob/main/assets/Epic%20Games%20replica.png)
+
 I recently worked on a project where my responsibility was to implement a scaled backend for a full stack application that aimed to replicate Epic Games' store product page.
 
 The application allowed clients to request information about video games, displaying details such as the game's name, rating, video trailer, description, genre, and product information like the developer, publisher, release date, and platform.
@@ -27,11 +31,6 @@ The application allowed clients to request information about video games, displa
 To implement the scaled backend, I utilized various technologies including Node, Express, Postgres Database, k6, Faker.js, Docker, Redis, and Digital Ocean.
 
 Within the Postgres database, I incorporated 10,000 records of fake data generated using Faker.js. This simulated the stock of video games and their corresponding product information that would be available to customers.
-
-
-#### Epic Games' product page
-
-![Product Page](https://github.com/jacobrphillips/SDC/blob/main/assets/Epic%20Games%20replica.png)
 
 ## Technologies Used
 
