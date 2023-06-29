@@ -3,12 +3,12 @@
 ## Table of Contents
 
 - [Introduction](#introduction-to-the-project)
-  - [Technologies Used](#technologies-used)
-  - [Challenges and Refactoring](#challenges-and-refactoring)
-  - [Optimizations Implemented](#optimizations-implemented)
-  - [Load Tests and Metrics](#load-tests-and-metrics)
-  - [Findings and Results](#findings-and-results)
-  - [Conclusion and Moving Forward](#conclusion-and-moving-forward)
+- [Technologies Used](#technologies-used)
+- [Challenges and Refactoring](#challenges-and-refactoring)
+- [Optimizations Implemented](#optimizations-implemented)
+- [Load Tests and Metrics](#load-tests-and-metrics)
+- [Findings and Results](#findings-and-results)
+- [Conclusion and Moving Forward](#conclusion-and-moving-forward)
 
 ## Introduction to the Project
 
