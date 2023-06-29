@@ -71,9 +71,24 @@ The three architectures measured were the original distributed monolith architec
 
 ## Findings and Results
 
+
+#### Average Response Time results
+
+![Average Response Time](https://github.com/jacobrphillips/SDC/blob/main/assets/Average%20Response%20Time_.png)
+
 The findings for average response time indicated that the distributed monolith architecture exhibited higher response times compared to the single server monolith. However, introducing Redis caching to the single server monolith significantly improved response times.
 
+
+#### Average Throughput results
+
+![Average Throughput](https://github.com/jacobrphillips/SDC/blob/main/assets/Average%20Throughput_.png)
+
 In terms of average throughput, the single server monolith with Redis achieved the highest throughput, indicating effective utilization of caching mechanisms. On the other hand, the distributed monolith had the lowest throughput.
+
+
+#### Error Rate results
+
+![Error Rate](https://github.com/jacobrphillips/SDC/blob/main/assets/Error%20Rate_.png)
 
 Regarding the error rate, it remained relatively consistent across different architectures and scaling configurations. The single server monolith with Redis exhibited the highest error rate, likely due to the significantly higher request load per second compared to the other architectures.
 
