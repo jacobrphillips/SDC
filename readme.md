@@ -28,6 +28,11 @@ To implement the scaled backend, I utilized various technologies including Node,
 
 Within the Postgres database, I incorporated 10,000 records of fake data generated using Faker.js. This simulated the stock of video games and their corresponding product information that would be available to customers.
 
+
+#### Epic Games' product page
+
+![Product Page](https://github.com/jacobrphillips/SDC/blob/main/assets/Epic%20Games%20replica.png)
+
 ## Technologies Used
 
 Here are the technologies used in this project:
@@ -47,7 +52,27 @@ One of the significant challenges I encountered during the implementation of the
 
 The project I inherited was originally developed with Supabase from another organization, and I did not have the rights to seed this database with thousands of records. To overcome this, I migrated the tables along with the seeded data to a Postgres image within a Docker container. I accomplished this by referencing the table definitions and seeded data, creating SQL files in the project's directory. I then created a Docker container containing a Postgres image using Docker Compose, initializing it with the newly created SQL files.
 
+
+#### inherited Supabase Database
+
+![Supabase](https://github.com/jacobrphillips/SDC/blob/main/assets/Supabase.png)
+
+
+#### Docker Container with Express Server and Postgres Database
+
+![Docker](https://github.com/jacobrphillips/SDC/blob/main/assets/docker%20screenshot.png)
+
+
+
+
 Another obstacle I faced was during the base load tests using k6 to send metrics to Grafana. Simulating 5,000 concurrent users exceeded the expected push interval configuration for InfluxDB, resulting in a cascade of failed requests and occasional timeout errors during the load tests. To address this, I optimized my load test script to simulate only 100 virtual users, reducing the amount of generated data and the number of requests made to ensure data can be processed and sent within the configured interval.
+
+
+
+#### Initial Load Test with Failing Responses
+
+![Initial Load Test](https://github.com/jacobrphillips/SDC/blob/main/assets/inital%20load%20test.png)
+
 
 After overcoming these challenges by refactoring the original backend infrastructure and adjusting the load test scripts, I established an excellent baseline for my application's performance, providing a starting point for further optimization.
 
@@ -61,7 +86,12 @@ To compare the metrics of the application's original architecture, I consolidate
 
 I also dockerized a Redis server and deployed it to its own Digital Ocean droplet. Redis caching was utilized to enhance caching mechanisms and improve the overall performance of the application.
 
+
 ## Load Tests and Metrics
+
+#### Optimized Load Test
+
+![Optimized Load Test](https://github.com/jacobrphillips/SDC/blob/main/assets/optimized%20load%20test.png)
 
 During the load tests, specifically breakpoint tests, I conducted both base and vertically scaled configurations. The base test consisted of one virtual machine with 2 virtual CPUs and 2 GB of Intel RAM. The test had a duration of 10 minutes with 100 virtual users. It ramped up from 0 to 100 virtual users over 2 minutes, stayed at 100 virtual users for 5 minutes, and then ramped down over 3 minutes until reaching 0 virtual users. The vertically scaled tests utilized one virtual machine with 4 virtual CPUs and 8 GB of Intel RAM, maintaining the same durations and ramp-up/ramp-down configurations as the base tests.
 
@@ -76,19 +106,24 @@ The three architectures measured were the original distributed monolith architec
 
 ![Average Response Time](https://github.com/jacobrphillips/SDC/blob/main/assets/Average%20Response%20Time_.png)
 
+
 The findings for average response time indicated that the distributed monolith architecture exhibited higher response times compared to the single server monolith. However, introducing Redis caching to the single server monolith significantly improved response times.
+
 
 
 #### Average Throughput results
 
 ![Average Throughput](https://github.com/jacobrphillips/SDC/blob/main/assets/Average%20Throughput_.png)
 
+
 In terms of average throughput, the single server monolith with Redis achieved the highest throughput, indicating effective utilization of caching mechanisms. On the other hand, the distributed monolith had the lowest throughput.
+
 
 
 #### Error Rate results
 
 ![Error Rate](https://github.com/jacobrphillips/SDC/blob/main/assets/Error%20Rate_.png)
+
 
 Regarding the error rate, it remained relatively consistent across different architectures and scaling configurations. The single server monolith with Redis exhibited the highest error rate, likely due to the significantly higher request load per second compared to the other architectures.
 
