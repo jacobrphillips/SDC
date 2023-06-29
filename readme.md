@@ -1,5 +1,13 @@
 # System Design Capstone
 
+## Summary 
+
+The System Design Capstone project aimed to implement a scaled backend for a full stack application resembling Epic Games' store product page. Through the utilization of technologies such as Node, Express, Postgres Database, Docker, Redis, and Digital Ocean, optimizations including containerization, migration, and caching were implemented to enhance scalability, performance, and response times, leading to improved throughput and a solid baseline for further optimization.
+
+### Project Video
+
+[![Project Video](https://img.youtube.com/vi/Bg1VuG6H8H4/0.jpg)](https://youtu.be/Bg1VuG6H8H4)
+
 ## Table of Contents
 
 - [Introduction](#introduction-to-the-project)
